@@ -1,0 +1,506 @@
+/* Modern Form Styles */
+.container {
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+      circle at 25% 25%,
+      rgba(255, 255, 255, 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 75% 75%,
+      rgba(255, 255, 255, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(120, 119, 198, 0.1) 0%,
+      transparent 70%
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Form Card Wrapper */
+.formCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1), 0 8px 32px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+  animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.formCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  border-radius: 24px 24px 0 0;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input Wrapper */
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Enhanced Title Input */
+.titleInput {
+  padding: 1.25rem 1.5rem;
+  border-radius: 16px;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  font-size: 1.125rem;
+  font-weight: 500;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1e293b;
+  letter-spacing: 0.025em;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.titleInput::placeholder {
+  color: #64748b;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.titleInput:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15),
+    0 8px 32px rgba(102, 126, 234, 0.2), 0 4px 16px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.titleInput:hover:not(:focus) {
+  border-color: rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Textarea Wrapper */
+.textareaWrapper {
+  margin-top: 1rem;
+  position: relative;
+}
+
+/* Enhanced Content Textarea */
+.contentTextarea {
+  width: 100%;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  font-family: "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code",
+    "Droid Sans Mono", "Source Code Pro", monospace;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  resize: vertical;
+  min-height: 450px;
+  outline: none;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1e293b;
+  letter-spacing: 0.025em;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05),
+    inset 0 2px 8px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  position: relative;
+}
+
+.contentTextarea::placeholder {
+  color: #64748b;
+  font-weight: 400;
+  opacity: 0.7;
+  line-height: 1.6;
+}
+
+.contentTextarea:focus {
+  border-color: #667eea;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.15),
+    0 12px 40px rgba(102, 126, 234, 0.2), 0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 2px 8px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.contentTextarea:hover:not(:focus) {
+  border-color: rgba(102, 126, 234, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.08),
+    inset 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Custom Scrollbar */
+.contentTextarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contentTextarea::-webkit-scrollbar-track {
+  background: rgba(226, 232, 240, 0.3);
+  border-radius: 4px;
+}
+
+.contentTextarea::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+.contentTextarea::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Character Counter */
+.characterCounter {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.5rem;
+  font-size: 0.8125rem;
+  color: #64748b;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.25rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Labels */
+.inputLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.025em;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.025em;
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+  min-width: 140px;
+}
+
+.primaryButton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(102, 126, 234, 0.4),
+    0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.primaryButton:hover::before {
+  opacity: 1;
+}
+
+.primaryButton:active {
+  transform: translateY(0);
+}
+
+.secondaryButton {
+  padding: 1rem 2rem;
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  color: #374151;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: 0.025em;
+  min-width: 140px;
+}
+
+.secondaryButton:hover {
+  border-color: rgba(102, 126, 234, 0.6);
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(102, 126, 234, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
+  .formCard {
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .titleInput {
+    padding: 1rem 1.25rem;
+    font-size: 1rem;
+  }
+
+  .contentTextarea {
+    padding: 1.5rem;
+    font-size: 0.875rem;
+    min-height: 350px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .formCard {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+
+  .contentTextarea {
+    min-height: 300px;
+    padding: 1.25rem;
+  }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 2rem 1.5rem;
+    max-width: 800px;
+  }
+
+  .titleInput {
+    padding: 1.125rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .contentTextarea {
+    padding: 2rem;
+    font-size: 1rem;
+    min-height: 500px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .container {
+    padding: 3rem 2rem;
+    max-width: 900px;
+  }
+
+  .formCard {
+    padding: 3.5rem;
+  }
+
+  .titleInput {
+    padding: 1.25rem 1.75rem;
+    font-size: 1.1875rem;
+  }
+
+  .contentTextarea {
+    padding: 2.5rem;
+    min-height: 550px;
+    font-size: 1rem;
+  }
+}
+
+/* Large Desktop */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .contentTextarea {
+    min-height: 600px;
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 768px) and (orientation: landscape) {
+  .contentTextarea {
+    min-height: 280px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+
+  .formCard {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(71, 85, 105, 0.3);
+  }
+
+  .titleInput,
+  .contentTextarea {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(71, 85, 105, 0.4);
+    color: #f1f5f9;
+  }
+
+  .titleInput::placeholder,
+  .contentTextarea::placeholder {
+    color: #94a3b8;
+  }
+
+  .inputLabel {
+    color: #e2e8f0;
+  }
+
+  .characterCounter {
+    background: rgba(30, 41, 59, 0.9);
+    color: #94a3b8;
+  }
+
+  .secondaryButton {
+    background: rgba(51, 65, 85, 0.8);
+    border-color: rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .formCard,
+  .titleInput,
+  .contentTextarea,
+  .primaryButton,
+  .secondaryButton {
+    transition: none;
+    animation: none;
+  }
+
+  .titleInput:focus,
+  .contentTextarea:focus,
+  .primaryButton:hover,
+  .secondaryButton:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .titleInput,
+  .contentTextarea {
+    border: 3px solid;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    border: 2px solid;
+  }
+}
+
+/* Focus management for accessibility */
+.titleInput:focus,
+.contentTextarea:focus {
+  outline: none;
+}
+
+.titleInput:focus-visible,
+.contentTextarea:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+  .container {
+    background: white;
+    padding: 1rem;
+  }
+
+  .formCard {
+    background: white;
+    border: 1px solid #000;
+    box-shadow: none;
+  }
+
+  .actionButtons {
+    display: none;
+  }
+}

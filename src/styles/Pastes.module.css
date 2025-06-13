@@ -1,0 +1,413 @@
+/* Modern Pastes Page Styles */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(120, 219, 226, 0.3) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Search Input */
+.searchInput {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  display: block;
+  padding: 1.25rem 1.75rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  box-sizing: border-box;
+  color: #1e293b;
+  letter-spacing: 0.025em;
+}
+
+.searchInput::placeholder {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: rgba(102, 126, 234, 0.8);
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 
+    0 0 0 4px rgba(102, 126, 234, 0.15),
+    0 12px 40px rgba(102, 126, 234, 0.2),
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px) scale(1.02);
+}
+
+/* Pastes Container */
+.pastesContainer {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Modern Paste Card */
+.pasteCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.pasteCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.pasteCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 12px 30px rgba(102, 126, 234, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-color: rgba(102, 126, 234, 0.3);
+}
+
+.pasteCard:hover::before {
+  transform: scaleX(1);
+}
+
+/* Paste Title */
+.pasteTitle {
+  margin-bottom: 1.5rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.025em;
+  line-height: 1.3;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Paste Content */
+.pasteContent {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: rgba(248, 250, 252, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  border-radius: 12px;
+  font-family: "JetBrains Mono", "SF Mono", "Monaco", "Inconsolata", "Fira Code", "Droid Sans Mono", "Source Code Pro", monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #374151;
+  max-height: 250px;
+  overflow-y: auto;
+  word-break: break-word;
+  position: relative;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pasteContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pasteContent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pasteContent::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 3px;
+}
+
+.pasteContent::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+/* Modern Buttons Container */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+/* Redesigned Action Buttons */
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(102, 126, 234, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  color: #374151;
+  position: relative;
+  overflow: hidden;
+  min-width: 100px;
+  text-align: center;
+  letter-spacing: 0.025em;
+}
+
+.actionButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.actionButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 25px rgba(102, 126, 234, 0.25),
+    0 3px 10px rgba(0, 0, 0, 0.1);
+  border-color: rgba(102, 126, 234, 0.4);
+  color: white;
+}
+
+.actionButton:hover::before {
+  opacity: 1;
+}
+
+.actionButton:active {
+  transform: translateY(0);
+}
+
+/* Button Links */
+.buttonLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Enhanced Date */
+.date {
+  font-size: 0.8125rem;
+  color: #64748b;
+  margin-top: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
+  letter-spacing: 0.025em;
+  padding: 0.5rem 1rem;
+  background: rgba(100, 116, 139, 0.1);
+  border-radius: 8px;
+  display: inline-block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .pastesContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pasteCard {
+    padding: 1.5rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .actionButton {
+    width: 100%;
+  }
+
+  .searchInput {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .pasteCard {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .pasteTitle {
+    font-size: 1.25rem;
+  }
+
+  .pastesContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .pastesContainer {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  }
+}
+
+/* Dark mode enhancements */
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  }
+
+  .pasteCard {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(71, 85, 105, 0.3);
+  }
+
+  .pasteContent {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(71, 85, 105, 0.5);
+    color: #cbd5e1;
+  }
+
+  .actionButton {
+    background: rgba(51, 65, 85, 0.8);
+    border-color: rgba(71, 85, 105, 0.4);
+    color: #e2e8f0;
+  }
+
+  .searchInput {
+    background: rgba(30, 41, 59, 0.95);
+    border-color: rgba(71, 85, 105, 0.3);
+    color: #f1f5f9;
+  }
+
+  .searchInput::placeholder {
+    color: #94a3b8;
+  }
+
+  .date {
+    color: #94a3b8;
+    background: rgba(71, 85, 105, 0.2);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .pasteCard,
+  .actionButton,
+  .searchInput,
+  .pasteCard::before {
+    transition: none;
+  }
+
+  .pasteCard:hover,
+  .actionButton:hover,
+  .searchInput:focus {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .pasteCard {
+    border: 2px solid;
+  }
+  
+  .actionButton {
+    border: 2px solid;
+  }
+}
+
+/* Loading animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.pasteCard {
+  animation: fadeInUp 0.6s ease-out backwards;
+}
+
+.pasteCard:nth-child(1) { animation-delay: 0.1s; }
+.pasteCard:nth-child(2) { animation-delay: 0.2s; }
+.pasteCard:nth-child(3) { animation-delay: 0.3s; }
+.pasteCard:nth-child(4) { animation-delay: 0.4s; }
+.pasteCard:nth-child(5) { animation-delay: 0.5s; }
+
+/* Print styles */
+@media print {
+  .container {
+    background: white;
+    padding: 1rem;
+  }
+  
+  .pasteCard {
+    background: white;
+    border: 1px solid #000;
+    box-shadow: none;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .actionButton {
+    display: none;
+  }
+}
