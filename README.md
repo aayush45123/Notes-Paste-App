@@ -46,7 +46,16 @@ src/
 
 ## 📸 Screenshots
 
-You can add screenshots by placing them in a folder (e.g. `/assets`) and referencing them like:
+## Screenshots
+
+### Screenshot 1
+![Screenshot 1](public/images/Screenshot1.png)
+
+### Screenshot 2
+![Screenshot 2](public/images/Screenshot2.png)
+
+### Screenshot 3
+![Screenshot 3](public/images/Screenshot3.png)
 
 ```md
 ![PasteSaver Screenshot](./assets/screenshot1.png)
