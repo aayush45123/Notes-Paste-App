@@ -45,17 +45,17 @@ src/
 ---
 
 ## 📸 Screenshots
+## App Screenshots
 
-## Screenshots
+### Home Page
+![Home](public/images/Screenshot%202025-06-13%20175255.png)
 
-### Screenshot 1
-![Screenshot 1](public/images/Screenshot1.png)
+### Home Page
+![Details](public/images/Screenshot%202025-06-13%20175311.png)
 
-### Screenshot 2
-![Screenshot 2](public/images/Screenshot2.png)
+### Paste Page
+![Share](public/images/Screenshot%202025-06-13%20175439.png)
 
-### Screenshot 3
-![Screenshot 3](public/images/Screenshot3.png)
 
 ```md
 ![PasteSaver Screenshot](./assets/screenshot1.png)
