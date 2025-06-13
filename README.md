@@ -1,12 +1,98 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📝 PasteSaver – A Simple Paste Management App
 
-Currently, two official plugins are available:
+**PasteSaver** is a lightweight React application that allows users to create, update, view, delete, and share code snippets (or “pastes”) using Redux and localStorage for state management and persistence.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✍️ **Create/Edit Pastes** – Add a title and code content.
+- 🔍 **Search** – Instantly search your saved pastes by title.
+- 📋 **Copy to Clipboard** – One-click copy for easy sharing.
+- 📤 **Share Link** – Generate and copy a shareable link.
+- 🗑️ **Delete** – Remove any paste you no longer need.
+- 📦 **Persisted in localStorage** – Your pastes are saved between sessions.
+
+---
+
+## 🖥️ Technologies Used
+
+- **React**
+- **Redux Toolkit**
+- **React Router DOM**
+- **react-hot-toast** for notifications
+- **CSS Modules** for scoped styling
+- **localStorage** for data persistence
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── components/
+│   ├── Home.jsx         # Create or edit pastes
+│   ├── Navbar.jsx       # Navigation bar
+│   ├── Pastes.jsx       # List and manage all pastes
+│   ├── ViewPaste.jsx    # View individual paste (read-only)
+├── redux/
+│   └── pasteSlice.js    # Redux slice for pastes
+├── styles/
+│   └── *.module.css     # Component-specific CSS
+```
+
+---
+
+## 📸 Screenshots
+
+You can add screenshots by placing them in a folder (e.g. `/assets`) and referencing them like:
+
+```md
+![PasteSaver Screenshot](./assets/screenshot1.png)
+```
+
+---
+
+## 🛠️ Getting Started
+
+1. **Clone the repository:**
+
+```bash
+git clone https://github.com/yourusername/pastesaver.git
+cd pastesaver
+```
+
+2. **Install dependencies:**
+
+```bash
+npm install
+```
+
+3. **Run the app:**
+
+```bash
+npm start
+```
+
+4. **Build for production:**
+
+```bash
+npm run build
+```
+
+---
+
+## 🧠 How It Works
+
+- Each paste is uniquely identified by `_id` (timestamp-based).
+- Redux manages the paste state via `pasteSlice.js`.
+- All pastes are synced to `localStorage`.
+- Users can edit a paste using a query parameter (`?pasteId=id`).
+- Share links use dynamic routing like `/pastes/:id`.
+
+---
+
+## 📄 License
+
+This project is open-source and available under the [MIT License](LICENSE).
